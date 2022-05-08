@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"set ENV=dev&& nodemon -q dist/index.js\" "
+    "dev": "concurrently \"npx tsc --watch\" \"set ENV=prod&& nodemon -q dist/index.js\" ",
+    "preview": "concurrently \"npx tsc --watch\" \"set ENV=prod&& nodemon -q dist/index.js\" ",
+    "buildApp": "concurrently \"npx tsc buildApp.ts --outDir ./dist \" ",
+    "createAppHtml": "concurrently \"set ENV=prod\" \"node dist/index.js > public/index.html\""
   },
   "repository": {
     "type": "git",
